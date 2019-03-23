@@ -87,7 +87,7 @@ def check(Board, turn):
                             return i - k + 1, j - k + 1
             if i > 0 and j < 14:
                 BoardDiag2[i, j] = BoardDiag2[i - 1, j + 1] + Board[i, j]
-                if i - 4 >= 0 and j + 4 < 15 and BoardDiag2[i, j] - BoardDiag2[i - 4, j + 4] + Board[i - 4, j + 4] == 4:
+                if i - 4 >= 0 and j + 4 < 14 and BoardDiag2[i, j] - BoardDiag2[i - 4, j + 4] + Board[i - 4, j + 4] == 4:
                     for k in range(5):
                         if Board[i - k, j + k] == 0:
                             Board *= turn
