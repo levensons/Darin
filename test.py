@@ -25,7 +25,6 @@ class ConvNet(nn.Module):
             nn.Conv2d(32, 16, kernel_size=4, stride=1, padding=0),
             nn.ReLU())
         self.fc = nn.Linear(16 * 9 * 9, 15 * 15)
-        self.drop = nn.Dropout(0.25)
 
     def forward(self, x):
         x = self.layer1(x)
@@ -120,7 +119,7 @@ if __name__ == "__main__":
     chr2idx = {letter: pos for pos, letter in enumerate(idx2chr)}
     net = ConvNet()
     net = net.to(device)
-    net.load_state_dict(torch.load("model5.dms", map_location=device))
+    net.load_state_dict(torch.load("model5-5.dms", map_location=device))
 
     while True:
         gameStr = sys.stdin.readline()  # input()#
